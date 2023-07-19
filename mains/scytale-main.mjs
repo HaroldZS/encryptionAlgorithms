@@ -1,5 +1,5 @@
-import Escitala from "./Scytale/scytale.mjs";
-import Formats from "./formats.mjs";
+import Escitala from "../Scytale/scytale.mjs";
+import Formats from "../utils/formats.mjs";
 
 // Message encryption
 

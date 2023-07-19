@@ -1,12 +1,12 @@
 import Formats from "../utils/formats.mjs";
 import Matrix from "../utils/matrix.mjs";
 
-class Escitala {
-  constructor(text, turns, longitude, placeholder) {
+class rowCode {
+  constructor(text, rows, placeholder) {
     this.text = Formats.removeSpaces(text);
-    this.turns = turns;
-    this.longitude = longitude;
+    this.rows = rows;
     this.placeholder = placeholder;
+    this.columns = Math.ceil(this.text.length / this.rows);
   }
 
   encryption() {
@@ -21,9 +21,10 @@ class Escitala {
     const matrix = [];
     let pos = 0;
 
-    for (let i = 0; i < this.turns; i++) {
+    for (let i = 0; i < this.columns; i++) {
       matrix[i] = [];
-      for (let j = 0; j < this.longitude; j++) {
+
+      for (let j = 0; j < this.rows; j++) {
         matrix[i][j] = this.text[pos] || this.placeholder;
         pos++;
       }
@@ -36,9 +37,9 @@ class Escitala {
     const matrix = [];
     let pos = 0;
 
-    for (let i = 0; i < this.longitude; i++) {
+    for (let i = 0; i < this.columns; i++) {
       matrix[i] = [];
-      for (let j = 0; j < this.turns; j++) {
+      for (let j = 0; j < this.rows; j++) {
         if (this.text[pos] === this.placeholder) {
           matrix[i][j] = " ";
         } else {
@@ -52,4 +53,4 @@ class Escitala {
   }
 }
 
-export default Escitala;
+export default rowCode;
