@@ -1,34 +1,34 @@
-import RowCode from "../RowCode/rowCode.mjs";
+import ColumnCode from "../ColumnCode/columnCode.mjs";
 import Formats from "../utils/formats.mjs";
 
 // Message encryption
 
 const encryptionMessage = "QUE LA FUERZA TE ACOMPAÑE";
-const encryptionRows = 4;
+const encryptionColumns = 6;
 const encryptionPlaceholder = "X";
 
-const EncryptionRowCode = new RowCode(
+const EncryptionColumnCode = new ColumnCode(
   encryptionMessage,
-  encryptionRows,
+  encryptionColumns,
   encryptionPlaceholder
 );
 
-const encryptedMessage = EncryptionRowCode.encryption();
+const encryptedMessage = EncryptionColumnCode.encryption();
 console.log(encryptedMessage);
 
-// Cryptogram decryption
+// Message decryption
 
-const decryptionMessage = "QAREM EUFZA PXEUA CAXLE TOÑX";
-const decryptionRows = 6;
+const decryptionMessage = "EIETN OOOON MSCEU XASEX SVRX";
+const decryptionColumns = 6;
 const decryptionPlaceholder = "X";
-const DecryptionRowCode = new RowCode(
+
+const DecryptionColumnCode = new ColumnCode(
   decryptionMessage,
-  decryptionRows,
+  decryptionColumns,
   decryptionPlaceholder
 );
 
-const decryptedMessage = DecryptionRowCode.decryption();
-
+const decryptedMessage = DecryptionColumnCode.decryption();
 console.log(decryptedMessage);
 
 // // With spacings
